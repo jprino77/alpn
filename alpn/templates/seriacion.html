@@ -1,0 +1,13 @@
+{% extends "base/base.html" %} {% block css %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/seriacionStyle.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/StyleOrdenar.css"> {% endblock %} {%block title_body%} Seriacion {% endblock %} {% block content %}
+<div id="sortable">
+
+</div>
+
+<div id="drag-Serie">
+
+</div>
+{% endblock %} {% block js %}
+
+<script src="{{ STATIC_URL }}js/seriacion.js"></script> {% endblock %}

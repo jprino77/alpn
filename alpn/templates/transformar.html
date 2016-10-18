@@ -1,0 +1,18 @@
+{% extends "base/base.html" %} {% block css %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/transformarStyle.css"> {% endblock %} {%block title_body%} Transformacion {% endblock %} {% block content %}
+<div id="draggeable">
+    <div class="triangle3 no-dropped" style=" border-bottom: solid 100px #EF5350; z-index: 1;"> </div>
+    <div class="parallelogram no-dropped" style="background: #EF5350; z-index: 1;"> </div>
+    <div class="square no-dropped" style="background: #E0E0E0; z-index: 1;"> </div>
+    <div class="square no-dropped" style="background: #E0E0E0; z-index: 1;"> </div>
+</div>
+
+<div id="droppeable">
+    <div name="triangle" class="triangle3 " style="left: 557px; top: 160px; "> </div>
+    <div class="parallelogram " style="left: 478px; top: 60px; "> </div>
+    <div class="square " style="left: 438px; top: 60px; "> </div>
+    <div class="square " style="left: 554px; top: -40px; "> </div>
+</div>
+{% endblock %} {% block js %}
+
+<script src="{{ STATIC_URL }}js/transformar.js"></script> {% endblock %}
