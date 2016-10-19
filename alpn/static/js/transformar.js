@@ -49,7 +49,9 @@ function countDisplayElements() {
         $(".mdl-dialog__content > p").html("¿Volver a jugar?")
         $(".close").html("No");
         $(".refresh").show();
-        setTimeout(showModalView, 500);
+
+        horaF = new Date($.now());
+        guardarJuego()
     }
 
 }
@@ -57,6 +59,11 @@ function countDisplayElements() {
 function handleDrop(event, ui) {
     var drop = $(this).data('figure');
     var drag = ui.draggable.data('figure');
+    if (movimientos == 0) {
+        horaI = new Date($.now());
+    }
+
+    movimientos++;
 
     if (drop == drag) {
         ui.draggable.addClass('correct');
@@ -75,6 +82,9 @@ function handleDrop(event, ui) {
 
 
 
+    } else {
+
+        errores++;
     }
 
 
