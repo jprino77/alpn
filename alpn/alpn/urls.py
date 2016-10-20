@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from apps.juego.views   import index, seriacion, ordenar, transformar, porColor, resultadoJuego
+from apps.estadistica.views import estadistica,movimiento_partida,error_partida
 
 urlpatterns = patterns('',
     # Examples:
@@ -14,5 +15,8 @@ urlpatterns = patterns('',
     url(r'transformar', transformar),
     url(r'porColor', porColor),
     url(r'resultadoJuego', resultadoJuego),
+    url(r'estadistica', estadistica),
+    url(r'movimiento_partida', movimiento_partida),
+    url(r'error_partida', error_partida),
     
 )

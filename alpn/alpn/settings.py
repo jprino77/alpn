@@ -75,7 +75,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'alpn.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(SETTINGS_PATH, 'templates'),
+    os.path.join(SETTINGS_PATH, 'templates').replace('\\','/'),
 )
 
 # Database

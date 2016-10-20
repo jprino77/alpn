@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http      import HttpResponse
 import logging
 import json
+from apps.juego import partidaDto
 # Create your views here.
 logger = logging.getLogger(__name__)
 def index(request):
