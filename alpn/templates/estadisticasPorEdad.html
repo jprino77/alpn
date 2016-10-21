@@ -1,7 +1,16 @@
 {% extends "base/estadisticaBase.html" %} {%block title_body%} Estadisticas {% endblock %} {% block content %}
-<div id="chart_movimiento_div"></div>
 
-<div id="chart_error_div"></div>
+<table class="columns">
+    <tr>
+        <td>
+            <div id="chart_movimiento_div" style="border: 1px solid #ccc"></div>
+        </td>
+        <td>
+            <div id="chart_error_div" style="border: 1px solid #ccc"></div>
+        </td>
+    </tr>
+</table>
+
 {% endblock %} {% block js %}
 
 <!--Load the AJAX API-->
