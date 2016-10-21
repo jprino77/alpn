@@ -1,4 +1,4 @@
-{% extends "base/base.html" %} {%block title_body%} Estadisticas {% endblock %} {% block content %}
+{% extends "base/estadisticaBase.html" %} {%block title_body%} Estadisticas {% endblock %} {% block content %}
 <div id="chart_movimiento_div"></div>
 <div id="chart_error_div"></div>
 {% endblock %} {% block js %}
@@ -19,8 +19,8 @@
     // draws it.
     function drawMovimientoChart() {
         $.getJSON("movimiento_partida", function(data) {
-            console.log(data)
-                // Create the data table.
+
+            // Create the data table.
             var dataChart = new google.visualization.DataTable();
             dataChart.addColumn('number', 'Partida');
             dataChart.addColumn('number', 'Movimientos');
@@ -64,8 +64,6 @@
             var dataChart = new google.visualization.DataTable();
             dataChart.addColumn('number', 'Partida');
             dataChart.addColumn('number', 'Errores');
-
-
             dataChart.addRows(data);
             // Set chart options
             var options = {

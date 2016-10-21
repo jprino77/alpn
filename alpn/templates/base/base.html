@@ -3,7 +3,7 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{%block title%} ALPN {% endblock %}</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/material.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,6 +29,7 @@
             </div>
         </header>
         <div class="mdl-layout__drawer">
+            {%block submenu%}
             <span class="mdl-layout-title">Juegos</span>
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="ordenar">Ordenar</a>
@@ -36,18 +37,20 @@
                 <a class="mdl-navigation__link" href="transformar">Rompecabezas</a>
                 <a class="mdl-navigation__link" href="seriacion">Seriacion</a>
 
+
             </nav>
+            {% endblock %}
         </div>
         <main id="content" class="mdl-layout__content">
 
             <div class="page-content ">
 
                 {% block content %}
-                    
-                    <div>
-                        <h4 class="mdl-dialog__title">¿Vamos a Jugar?</h4>
-                    </div>
-                
+
+                <div>
+                    <h4 class="mdl-dialog__title">¿Vamos a Jugar?</h4>
+                </div>
+
                 {% endblock %}
 
 
