@@ -1,3 +1,8 @@
+var errores = 0;
+var movimientos = 0;
+var horaI = 0;
+var horaf = 0;
+
 function showModalView() {
     var dialog = document.querySelector('dialog');
 
@@ -29,8 +34,8 @@ function guardarJuego() {
     var data = JSON.stringify({
         cantidad_errores: errores,
         cantidad_movimientos: movimientos,
-        hora_fin: horaI,
-        hora_inicio: horaF
+        hora_inicio: horaI,
+        hora_fin: horaF
     })
     $.ajax({
         // puede ser "get" y "post"
@@ -100,8 +105,3 @@ $(function() {
 
 
 });
-
-var errores = 0;
-var movimientos = 0;
-var horaI = 0;
-var horaf = 0;

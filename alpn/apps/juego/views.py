@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http      import HttpResponse
 import logging
 import json
-from apps.juego import partidaDto
+from apps.juego.models import partida 
 # Create your views here.
 logger = logging.getLogger(__name__)
 def index(request):
@@ -23,6 +23,6 @@ def seriacion(request):
 
 def resultadoJuego(request):
     json_data=json.loads(request.body)
-    logger.info('Something went wrong!')
+
     return HttpResponse(request)
 
