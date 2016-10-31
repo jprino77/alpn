@@ -4,11 +4,15 @@ from apps.usuario.models import Usuario
 # Create your models here.
 class TipoJuego (models.Model):
     descripcion = models.CharField(max_length=45, null= False)
-    fecha_insert = models.DateTimeField(auto_now = True)
-    fecha_delete = models.DateTimeField(auto_now = False)
-    fecha_update = models.DateTimeField(auto_now = False)
+    fecha_insert = models.DateTimeField(auto_now = True, null= True)
+    fecha_delete = models.DateTimeField(auto_now = False, null= True)
+    fecha_update = models.DateTimeField(auto_now = False, null= True)
+    
+    class Meta:
+        db_table = "tipo_juego"
+
     def __unicode__(self):
-        return self.title
+        return self.pk
 
 class Partida (models.Model):
     cantidad_errores = models.IntegerField(default=0)
@@ -18,9 +22,13 @@ class Partida (models.Model):
     hora_fin = models.TimeField(null=True)
     tipo_juego =  models.ForeignKey(TipoJuego, null=False)
     usuario =  models.ForeignKey(Usuario, null=True)
-    fecha_insert = models.DateTimeField(auto_now = True)
-    fecha_delete = models.DateTimeField(auto_now = False)
-    fecha_update = models.DateTimeField(auto_now = False)
+    fecha_insert = models.DateTimeField(auto_now = True, null= True)
+    fecha_delete = models.DateTimeField(auto_now = False, null= True)
+    fecha_update = models.DateTimeField(auto_now = False, null= True)
+
+    class Meta:
+        db_table = "partida"
+
     def __unicode__(self):
-        return self.title
+        return self.pk
 

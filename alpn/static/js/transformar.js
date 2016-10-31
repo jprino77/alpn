@@ -19,19 +19,19 @@ $(function() {
 
 
     $("#droppeable .square").droppable({
-        accept: '.square',
+
         hoverClass: 'hovered',
         drop: handleDrop
     }).data('figure', 'square');
 
     $("#droppeable .parallelogram").droppable({
-        accept: '.parallelogram',
+
         hoverClass: 'hovered',
         drop: handleDrop
     }).data('figure', 'parallelogram');
 
     $("#droppeable .triangle3").droppable({
-        accept: '.triangle3',
+
         hoverClass: 'hovered',
         drop: handleDrop
     }).data('figure', 'triangle3');
@@ -50,7 +50,7 @@ function countDisplayElements() {
         $(".close").html("No");
         $(".refresh").show();
 
-        horaF = new Date($.now());
+        horaF = new Date()
         guardarJuego()
     }
 
@@ -60,7 +60,8 @@ function handleDrop(event, ui) {
     var drop = $(this).data('figure');
     var drag = ui.draggable.data('figure');
     if (movimientos == 0) {
-        horaI = new Date($.now());
+        horaI = new Date()
+
     }
 
     movimientos++;

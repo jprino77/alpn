@@ -34,8 +34,8 @@ function guardarJuego() {
     var data = JSON.stringify({
         cantidad_errores: errores,
         cantidad_movimientos: movimientos,
-        hora_inicio: horaI,
-        hora_fin: horaF
+        hora_inicio: horaI.toLocaleTimeString(),
+        hora_fin: horaF.toLocaleTimeString()
     })
     $.ajax({
         // puede ser "get" y "post"
