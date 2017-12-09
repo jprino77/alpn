@@ -1,0 +1,21 @@
+ .triangle4 {
+     float: left;
+     margin-left: 13%;
+     margin-top: 2%;
+ }
+ 
+ .triangle3 {
+     float: left;
+ }
+ 
+ #draggeable {
+     width: 90%;
+     height: 46%;
+     position: absolute;
+     margin-top: 23%;
+     margin-left: 5%;
+     border: 2px solid black;
+     border-radius: 10px;
+     background: url("../images/wood.jpg");
+     background-size: cover;
+ }

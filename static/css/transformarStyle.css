@@ -1,0 +1,13 @@
+body {
+    background: url("../images/image1.png");
+    background-size: cover;
+}
+
+#draggeable {
+    position: absolute;
+    margin-left: 5%;
+}
+
+#draggeable div {
+    margin: 5%;
+}

@@ -1,0 +1,82 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{%block title%} ALPN {% endblock %}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/figures.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/StyleMaterial.css"> {% block css %}{% endblock %}
+</head>
+
+<body>
+
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">{%block title_body%} Menu {% endblock %}</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="">Nombre de usuario</a>
+
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            {%block submenu%}
+            <span class="mdl-layout-title">Juegos</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="ordenar">Ordenar</a>
+                <a class="mdl-navigation__link" href="porColor">Agrupar por color</a>
+                <a class="mdl-navigation__link" href="transformar">Rompecabezas</a>
+                <a class="mdl-navigation__link" href="seriacion">Seriacion</a>
+
+
+            </nav>
+            {% endblock %}
+        </div>
+        <main id="content" class="mdl-layout__content">
+
+            <div class="page-content ">
+
+                {% block content %}
+
+                <div>
+                    <h4 class="mdl-dialog__title">¿Vamos a Jugar?</h4>
+                </div>
+
+                {% endblock %}
+
+
+                <dialog class="mdl-dialog">
+                    <h4 class="mdl-dialog__title">Felicitaciones, lo has logrado!!!!</h4>
+                    <div class="mdl-dialog__content">
+                        <p>
+                            ¿Volver a jugar?
+                        </p>
+                    </div>
+                    <div class="mdl-dialog__actions">
+                        <button type="button" class="mdl-button refresh">Si</button>
+                        <button type="button" class="mdl-button close">No</button>
+                    </div>
+                </dialog>
+
+            </div>
+
+        </main>
+    </div>
+
+</body>
+<script src="{{ STATIC_URL }}js/material.min.js"></script>
+<script src="{{ STATIC_URL }}js/jquery-3.1.0.min.js"></script>
+<script src="{{ STATIC_URL }}js/jquery-ui.min.js"></script>
+<script src="{{ STATIC_URL }}js/juegos.js"></script>
+{% block js %} {% endblock %}
+
+</html>
