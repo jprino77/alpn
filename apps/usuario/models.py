@@ -31,4 +31,4 @@ class Usuario (models.Model):
         db_table = "usuario"
         
     def __unicode__(self):
-       return self.title   
+       return self.nombre   

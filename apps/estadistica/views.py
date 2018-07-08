@@ -4,6 +4,9 @@ from django.http      import HttpResponse,JsonResponse
 
 import json
 
+def index(request):
+    return render(request,"base/estadisticaBase.html")
+
 # Create your views here.
 def estadistica(request):
     return render(request, 'estadisticasPorUsuario.html')
@@ -22,6 +25,7 @@ def error_partida (request):
 def movimiento_edad (request):
     data =  [["5 años",9],["6 años",13],["7 años",12],["8 años",15],["9 años",14]]
     return HttpResponse(json.dumps(data), content_type="application/json")
+
 def movimiento_error (request):
     data =  [["5 años",9],["6 años",13],["7 años",12],["8 años",15],["9 años",1]]
     return HttpResponse(json.dumps(data), content_type="application/json")
