@@ -6,6 +6,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', logout_then_login , name='logout'),
-    url(r'^juego/', include('apps.juego.urls',namespace= "juego")),
-    url(r'^estadistica/', include('apps.estadistica.urls', namespace = "estadistica"))
+    url(r'^logged/', include('apps.usuario.urls',namespace= "usuario"))
+
 )

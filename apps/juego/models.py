@@ -1,8 +1,9 @@
 from django.db import models
-from apps.usuario.models import Usuario 
+from apps.usuario.models import User 
 
 # Create your models here.
 class TipoJuego (models.Model):
+    codigo = models.CharField(max_length=3, null= False)
     descripcion = models.CharField(max_length=45, null= False)
     fecha_insert = models.DateTimeField(auto_now = True, null= True)
     fecha_delete = models.DateTimeField(auto_now = False, null= True)
@@ -21,7 +22,7 @@ class Partida (models.Model):
     hora_inicio = models.TimeField(null=True)
     hora_fin = models.TimeField(null=True)
     tipo_juego =  models.ForeignKey(TipoJuego, null=False)
-    usuario =  models.ForeignKey(Usuario, null=True)
+    usuario =  models.ForeignKey(User, null=True)
     fecha_insert = models.DateTimeField(auto_now = True, null= True)
     fecha_delete = models.DateTimeField(auto_now = False, null= True)
     fecha_update = models.DateTimeField(auto_now = False, null= True)

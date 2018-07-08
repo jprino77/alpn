@@ -2,25 +2,33 @@ from django.shortcuts import render
 from django.http      import HttpResponse
 import json
 import datetime
-from apps.juego.models import Partida, TipoJuego 
+from apps.juego.models import Partida, TipoJuego
+from apps.usuario.decorators import estudiante_required
 # Create your views here.
 
+@estudiante_required
 def index(request):
+    print request.user.usuario.fecha_nacimiento
+    
     return render(request,"base/base.html")
 
+@estudiante_required
 def ordenar(request):
     return render(request,"ordenar.html")
 
+@estudiante_required
 def transformar(request):
    
     return render(request,"transformar.html")
-
+@estudiante_required
 def porColor(request):
     return render(request,"porColor.html")
 
+@estudiante_required
 def seriacion(request):
     return render(request,"seriacion.html")
 
+@estudiante_required
 def resultadoJuego(request):
     p = Partida()
     
