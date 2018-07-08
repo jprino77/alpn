@@ -33,6 +33,12 @@ function countDisplayElements() {
 function isSorted(event, ui) {
 
     var len = $('#sortable > div').length;
+    
+    if (movimientos == 0) {
+        horaI = new Date()
+    }
+
+    movimientos++;
 
     var id;
     var idAdyacente;
@@ -56,6 +62,8 @@ function isSorted(event, ui) {
         $(".close").html("No");
         $(".refresh").show();
         setTimeout(showModalView, 500);
+        horaF = new Date()
+        guardarJuego()
     }
 
 }

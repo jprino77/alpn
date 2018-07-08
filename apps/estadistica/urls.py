@@ -9,10 +9,10 @@ urlpatterns = patterns('',
 
     url(r'^$', login_required(index), name='indexEstadistica'),
     url(r'estadistica_por_alumno/$', login_required(estadistica), name= 'estadistica_por_alumno'),
-    url(r'movimiento_partida/$', login_required(movimiento_partida)),
-    url(r'edad/$', login_required(estadisticaEdad)),
-    url(r'error_partida/$', login_required(error_partida)),
-    url(r'movEdad/$', login_required(movimiento_edad)),
-    url(r'errEdad/$', login_required(movimiento_error)),
+    url(r'movimiento_partida/$', login_required(movimiento_partida), name= 'movimiento_partida'),
+    url(r'edad/$', login_required(estadisticaEdad), name= 'edad'),
+    url(r'error_partida/$', login_required(error_partida), name= 'error_partida'),
+    url(r'movEdad/$', login_required(movimiento_edad), name= 'movEdad'),
+    url(r'errEdad/$', login_required(movimiento_error), name= 'errEdad'),
     
 )

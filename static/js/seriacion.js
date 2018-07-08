@@ -40,6 +40,8 @@ function countDisplayElements() {
         $(".close").html("No");
         $(".refresh").show();
         setTimeout(showModalView, 500);
+        horaF = new Date()
+        guardarJuego()
     }
 
 }
@@ -47,6 +49,11 @@ function countDisplayElements() {
 function handleDrop(event, ui) {
     var drop = $(this).data('position');
     var drag = ui.draggable.data('position');
+
+    if (movimientos == 0) {
+        horaI = new Date()
+    }
+    movimientos++;
 
     if (drop == drag) {
         ui.draggable.addClass('correct');
@@ -66,6 +73,9 @@ function handleDrop(event, ui) {
 
 
 
+    }else {
+
+        errores++;
     }
 
 

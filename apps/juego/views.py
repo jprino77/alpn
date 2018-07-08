@@ -31,9 +31,8 @@ def seriacion(request):
 @estudiante_required
 def resultadoJuego(request):
     p = Partida()
-    
     partidaJson =  json.loads(request.body)
-    
+    print 'ZORRAAA'
     #mover a un service
     tp = TipoJuego(id = 1,) #harcodeo prueba ver como levantar tp
     p.hora_inicio = partidaJson['hora_inicio']

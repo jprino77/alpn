@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
 
     init("Debes Solar los triangulos en el color que corresponda");
 
@@ -41,7 +41,7 @@ $(function() {
 
 function countDisplayElements() {
 
-    var count = $('.count').filter(function() {
+    var count = $('.count').filter(function () {
         return $(this).css('display') !== 'none';
     }).length;
 
@@ -52,6 +52,8 @@ function countDisplayElements() {
         $(".close").html("No");
         $(".refresh").show();
         setTimeout(showModalView, 500);
+        horaF = new Date()
+        guardarJuego()
     }
 
 }
@@ -59,6 +61,11 @@ function countDisplayElements() {
 function handleDrop(event, ui) {
     var drop = $(this).data('figure');
     var drag = ui.draggable.data('figure');
+
+    if (movimientos == 0) {
+        horaI = new Date()
+    }
+    movimientos++;
 
     if (drop == drag) {
         ui.draggable.addClass('correct');
@@ -71,11 +78,14 @@ function handleDrop(event, ui) {
         });
         ui.draggable.draggable('option', 'revert', false);
 
-        ui.draggable.hide(500, function() {
+        ui.draggable.hide(500, function () {
             countDisplayElements();
         });
 
 
+    } else {
+
+        errores++;
     }
 
 
