@@ -53,7 +53,7 @@ function countDisplayElements() {
         $(".refresh").show();
         setTimeout(showModalView, 500);
         horaF = new Date()
-        guardarJuego()
+        guardarJuego("COL")
     }
 
 }

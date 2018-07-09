@@ -63,7 +63,7 @@ function isSorted(event, ui) {
         $(".refresh").show();
         setTimeout(showModalView, 500);
         horaF = new Date()
-        guardarJuego()
+        guardarJuego("ORD")
     }
 
 }

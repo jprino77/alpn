@@ -8,8 +8,6 @@ from apps.usuario.decorators import estudiante_required
 
 @estudiante_required
 def index(request):
-    print request.user.usuario.fecha_nacimiento
-    
     return render(request,"base/base.html")
 
 @estudiante_required
@@ -31,15 +29,17 @@ def seriacion(request):
 @estudiante_required
 def resultadoJuego(request):
     p = Partida()
+    tp = TipoJuego()
     partidaJson =  json.loads(request.body)
-    print 'ZORRAAA'
     #mover a un service
-    tp = TipoJuego(id = 1,) #harcodeo prueba ver como levantar tp
+    tp = TipoJuego.objects.get(codigo = partidaJson['codigo_juego'],)
+    print tp.id
     p.hora_inicio = partidaJson['hora_inicio']
     p.hora_fin = partidaJson['hora_fin']
     p.cantidad_errores = partidaJson['cantidad_errores']
     p.cantidad_movimientos = partidaJson['cantidad_movimientos']
     p.tipo_juego = tp
+    p.usuario = request.user
     p.save()
 
     

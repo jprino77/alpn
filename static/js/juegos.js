@@ -29,13 +29,15 @@ function init(mensaje) {
     showModalView();
 }
 
-function guardarJuego() {
+function guardarJuego(codigoJuego) {
 
     var data = JSON.stringify({
         cantidad_errores: errores,
         cantidad_movimientos: movimientos,
         hora_inicio: horaI.toLocaleTimeString(),
-        hora_fin: horaF.toLocaleTimeString()
+        hora_fin: horaF.toLocaleTimeString(),
+        codigo_juego: codigoJuego
+
     })
     $.ajax({
         // puede ser "get" y "post"

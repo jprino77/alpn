@@ -51,7 +51,7 @@ function countDisplayElements() {
         $(".refresh").show();
 
         horaF = new Date()
-        guardarJuego()
+        guardarJuego("TRA")
     }
 
 }
