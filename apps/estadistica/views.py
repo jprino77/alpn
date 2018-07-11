@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.http      import HttpResponse,JsonResponse
 from apps.usuario.decorators import tutor_required
+from .querys import estadistica_edad, estadistica_alumnos
 
 import json
 
@@ -14,25 +15,31 @@ def estadistica(request):
     return render(request, 'estadisticasPorUsuario.html')
 
 @tutor_required
-def movimiento_partida (request):
-    data =  [[1,12],[1,7],[3,6],[4,6],[5,9],[6,13],[7,12],[8,15],[9,14],[10,18]]
-    return HttpResponse(json.dumps(data), content_type="application/json")
-
-@tutor_required
 def estadisticaEdad(request):
     return render(request, 'estadisticasPorEdad.html')
 
 @tutor_required
-def error_partida (request):
-    data =  [[5,9],[6,13],[7,12],[8,15],[9,14]]
+def mov_eror_partida (request):
+    resultado = estadistica_alumnos()
+    errores = list();
+    movimientos = list();
+    index = 0; 
+    for resultados in resultado:
+        index = index + 1;
+        errores.append([int(index),int(resultados.cantidad_errores)])
+        movimientos.append([int(index),int(resultados.cantidad_movimientos)])
+    data = {'errores': errores, 'movimientos': movimientos}
+
     return HttpResponse(json.dumps(data), content_type="application/json")
 
 @tutor_required
-def movimiento_edad (request):
-    data =  [["5 años",9],["6 años",13],["7 años",12],["8 años",15],["9 años",14]]
-    return HttpResponse(json.dumps(data), content_type="application/json")
-
-@tutor_required
-def movimiento_error (request):
-    data =  [["5 años",9],["6 años",13],["7 años",12],["8 años",15],["9 años",1]]
+def mov_err_edad (request):
+    resultado= estadistica_edad();
+    errores = list();
+    movimientos = list();
+    
+    for resultados in resultado:
+        errores.append([resultados[0],int(resultados[1])])
+        movimientos.append([resultados[0],int(resultados[2])])
+    data = {'errores': errores, 'movimientos': movimientos}
     return HttpResponse(json.dumps(data), content_type="application/json")

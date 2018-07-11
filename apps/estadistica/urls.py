@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 from django.contrib.auth.decorators import login_required
-from apps.estadistica.views import index,estadistica,movimiento_partida,estadisticaEdad,error_partida, movimiento_edad, movimiento_error
+from apps.estadistica.views import index,estadistica,estadisticaEdad,mov_eror_partida, mov_err_edad
 
 urlpatterns = patterns('',
     # Examples:
@@ -9,10 +9,8 @@ urlpatterns = patterns('',
 
     url(r'^$', login_required(index), name='indexEstadistica'),
     url(r'estadistica_por_alumno/$', login_required(estadistica), name= 'estadistica_por_alumno'),
-    url(r'movimiento_partida/$', login_required(movimiento_partida), name= 'movimiento_partida'),
     url(r'edad/$', login_required(estadisticaEdad), name= 'edad'),
-    url(r'error_partida/$', login_required(error_partida), name= 'error_partida'),
-    url(r'movEdad/$', login_required(movimiento_edad), name= 'movEdad'),
-    url(r'errEdad/$', login_required(movimiento_error), name= 'errEdad'),
+    url(r'movErrPartida/$', login_required(mov_eror_partida), name= 'movErrPartida'),
+    url(r'movErrEdad/$', login_required(mov_err_edad), name= 'moverredad'),
     
 )

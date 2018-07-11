@@ -7,8 +7,8 @@ import datetime
 def index(request):
 
     current_user = request.user.usuario
+    
     page = HttpResponse()
-    print current_user.tipo_usuario.codigo
     if current_user.tipo_usuario.codigo == 'ALU':
         page = render(request,"base/base.html")
     elif current_user.tipo_usuario.codigo == 'TUT':
