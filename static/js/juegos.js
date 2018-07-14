@@ -62,6 +62,11 @@ function guardarJuego(codigoJuego) {
                 $(".mdl-dialog__content p").html("¿Volver a jugar?")
                 $(".close").html("No");
                 $(".refresh").show();
+                var dialog = document.querySelector('dialog');
+                dialog.querySelector('.close').addEventListener('click', function () {
+                    window.location.href = ("/logged")
+                    dialog.close();
+                });
                 showModalView()
                 reproducirSonido("aplausos");
             }, 500);

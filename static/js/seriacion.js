@@ -64,6 +64,7 @@ function handleDrop(event, ui) {
         ui.draggable.removeClass("serieIncompleta");
 
         ui.draggable.css("background", "#66BB6A");
+        reproducirSonido("coin");
         countDisplayElements();
 
 
