@@ -45,11 +45,6 @@ function countDisplayElements() {
 
 
     if (count == 0) {
-        $(".mdl-dialog__title").html("Felicitaciones, lo has logrado!!!!")
-        $(".mdl-dialog__content > p").html("¿Volver a jugar?")
-        $(".close").html("No");
-        $(".refresh").show();
-
         horaF = new Date()
         guardarJuego("TRA")
     }
@@ -78,7 +73,7 @@ function handleDrop(event, ui) {
         ui.draggable.draggable('option', 'revert', false);
 
         ui.draggable.removeClass("no-dropped");
-
+        reproducirSonido("coin");
         countDisplayElements();
 
 

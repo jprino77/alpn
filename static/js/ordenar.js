@@ -56,12 +56,6 @@ function isSorted(event, ui) {
     }
 
     if (sorted == true) {
-
-        $(".mdl-dialog__title").html("Felicitaciones, lo has logrado!!!!")
-        $(".mdl-dialog__content > p").html("¿Volver a jugar?")
-        $(".close").html("No");
-        $(".refresh").show();
-        setTimeout(showModalView, 500);
         horaF = new Date()
         guardarJuego("ORD")
     }

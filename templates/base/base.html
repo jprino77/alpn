@@ -12,7 +12,12 @@
 </head>
 
 <body>
-
+    <audio id="aplausos">
+        <source src="{{STATIC_URL}}audio/aplausos.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="coin">
+        <source src="{{STATIC_URL}}audio/coin.mp3" type="audio/mpeg">
+    </audio>
     <!-- Always shows a header, even in smaller screens. -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
@@ -60,7 +65,7 @@
                                 </div>
                                 <div class="mdl-grid">
                                     <div class="video mdl-cell mdl-cell--12-col mdl-cell--middle">
-                                    
+
                                     </div>
 
                                 </div>
@@ -78,6 +83,7 @@
                     </div>
 
                     {% endblock %}
+
 
 
                 </div>

@@ -47,11 +47,6 @@ function countDisplayElements() {
 
 
     if (count == 0) {
-        $(".mdl-dialog__title").html("Felicitaciones, lo has logrado!!!!")
-        $(".mdl-dialog__content > p").html("¿Volver a jugar?")
-        $(".close").html("No");
-        $(".refresh").show();
-        setTimeout(showModalView, 500);
         horaF = new Date()
         guardarJuego("COL")
     }

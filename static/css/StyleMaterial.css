@@ -6,4 +6,5 @@ iframe{
 
 .mdl-dialog{
     width: 40%;
+    z-index: 999999;
 }

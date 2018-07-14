@@ -3,6 +3,10 @@ var movimientos = 0;
 var horaI = 0;
 var horaf = 0;
 
+function reproducirSonido(sonido) {
+    $("#" + sonido).get(0).play()
+}
+
 function showModalView() {
     'use strict';
     var dialog = document.querySelector('dialog');
@@ -26,7 +30,7 @@ function showModalView() {
 function init(mensaje, video) {
     $(".mdl-dialog__title").html("Bienvenido");
     $(".mdl-dialog__content p").html(mensaje);
-    $(".mdl-dialog__content div.video").html('<iframe src="https://www.youtube.com/embed/'+video+'?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>');
+    $(".mdl-dialog__content div.video").html('<iframe src="https://www.youtube.com/embed/' + video + '?enablejsapi=1&version=3&playerapiid=ytplayer1&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>');
     $(".close").html("<i class='material-icons'> done</i> De acuerdo");
     $(".close").addClass("mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--green-300 mdl-color-text--white");
     $(".refresh").hide();
@@ -52,7 +56,15 @@ function guardarJuego(codigoJuego) {
         data: data,
         complete: function (xhr, status) {
 
-            setTimeout(showModalView, 500);
+            setTimeout(function () {
+                $(".mdl-dialog__content div.video").html('');
+                $(".mdl-dialog__title").html("Felicitaciones, lo has logrado!!!!")
+                $(".mdl-dialog__content p").html("¿Volver a jugar?")
+                $(".close").html("No");
+                $(".refresh").show();
+                showModalView()
+                reproducirSonido("aplausos");
+            }, 500);
         }
     });
 }
@@ -107,7 +119,9 @@ $(function () {
         }
     });
 
-
-
-
+});
+$(function () {
+    $('button.close').click(function () {
+        $('iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+    });
 });
