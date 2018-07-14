@@ -1,0 +1,19 @@
+body  {
+    background: url("../images/board.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.mdl-cell {
+    color: white;
+}
+
+.mdl-grid.center-items {
+    justify-content: center;
+}
+
+.mdl-grid:first-of-type .mdl-cell {
+    height: 50px;
+}
