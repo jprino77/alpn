@@ -1,6 +1,6 @@
 $(function () {
 
-    init("Debes Solar los triangulos en el color que corresponda");
+    init("Debes Solar los triangulos en el color que corresponda","ka2QBKEeU4Q");
 
     $("#draggeable  .bottom-red").draggable({
         containment: '#content',

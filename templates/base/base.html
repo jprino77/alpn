@@ -45,37 +45,48 @@
 
         </div>
         <main id="content" class="mdl-layout__content">
-
             <div class="page-content ">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <dialog class="mdl-dialog">
+                            <h4 class="mdl-dialog__title">Felicitaciones, lo has logrado!!!!</h4>
+                            <div class="mdl-dialog__content">
+                                <div class="mdl-grid">
+                                    <div class="mdl-cell mdl-cell--12-col mdl-cell--middle">
+                                        <p>
+                                            ¿Volver a jugar?
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mdl-grid">
+                                    <div class="video mdl-cell mdl-cell--12-col mdl-cell--middle">
+                                    
+                                    </div>
 
-                {% block content %}
+                                </div>
+                                <div class="mdl-dialog__actions">
+                                    <button type="button" class="mdl-button refresh">Si</button>
+                                    <button type="button" class="mdl-button close">No</button>
+                                </div>
+                        </dialog>
+                        </div>
+                    </div>
+                    {% block content %}
 
-                <div>
-                    <h4 class="mdl-dialog__title">¿Vamos a Jugar?</h4>
+                    <div>
+                        <h4 class="mdl-dialog__title">¿Vamos a Jugar?</h4>
+                    </div>
+
+                    {% endblock %}
+
+
                 </div>
 
-                {% endblock %}
-
-
-                <dialog class="mdl-dialog">
-                    <h4 class="mdl-dialog__title">Felicitaciones, lo has logrado!!!!</h4>
-                    <div class="mdl-dialog__content">
-                        <p>
-                            ¿Volver a jugar?
-                        </p>
-                    </div>
-                    <div class="mdl-dialog__actions">
-                        <button type="button" class="mdl-button refresh">Si</button>
-                        <button type="button" class="mdl-button close">No</button>
-                    </div>
-                </dialog>
-
-            </div>
-
         </main>
-    </div>
 
+        </div>
 </body>
+
 <script src="{{ STATIC_URL }}js/material.min.js"></script>
 <script src="{{ STATIC_URL }}js/jquery-3.1.0.min.js"></script>
 <script src="{{ STATIC_URL }}js/jquery-ui.min.js"></script>

@@ -1,6 +1,6 @@
 $(function() {
 
-    init("Debes armar el rompecabezas con las figuras que se encuentran sueltas en la pantalla");
+    init("Debes armar el rompecabezas con las figuras que se encuentran sueltas en la pantalla","rtAG7qcVZgE");
 
     $("#draggeable  .square").draggable({
         containment: '#content',

@@ -1,5 +1,5 @@
 $(function() {
-    init("Debes arrastrar las tarjetas hasta que completes la serie");
+    init("Debes arrastrar las tarjetas hasta que completes la serie","Kdd8cW-yuZo");
 
     for (var i = 1; i <= 10; i++) {
 

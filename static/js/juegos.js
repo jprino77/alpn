@@ -4,6 +4,7 @@ var horaI = 0;
 var horaf = 0;
 
 function showModalView() {
+    'use strict';
     var dialog = document.querySelector('dialog');
 
     if (!dialog.showModal) {
@@ -12,19 +13,22 @@ function showModalView() {
 
     dialog.showModal();
 
-    dialog.querySelector('.close').addEventListener('click', function() {
+    dialog.querySelector('.close').addEventListener('click', function () {
         dialog.close();
     });
 
-    dialog.querySelector('.refresh').addEventListener('click', function() {
+    dialog.querySelector('.refresh').addEventListener('click', function () {
         location.reload();
     });
 }
 
-function init(mensaje) {
+//url del video de youtube
+function init(mensaje, video) {
     $(".mdl-dialog__title").html("Bienvenido");
-    $(".mdl-dialog__content > p").html(mensaje);
-    $(".close").html("De acuerdo");
+    $(".mdl-dialog__content p").html(mensaje);
+    $(".mdl-dialog__content div.video").html('<iframe src="https://www.youtube.com/embed/'+video+'?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>');
+    $(".close").html("<i class='material-icons'> done</i> De acuerdo");
+    $(".close").addClass("mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--green-300 mdl-color-text--white");
     $(".refresh").hide();
     showModalView();
 }
@@ -46,14 +50,14 @@ function guardarJuego(codigoJuego) {
         url: "resultadoJuego",
         dataType: 'json',
         data: data,
-        complete: function(xhr, status) {
+        complete: function (xhr, status) {
 
             setTimeout(showModalView, 500);
         }
     });
 }
-
-$(function() {
+//envio seguro del ajax, para que envie el token de seguridad
+$(function () {
 
     // using jQuery
     function getCookie(name) {
@@ -93,7 +97,7 @@ $(function() {
     }
 
     $.ajaxSetup({
-        beforeSend: function(xhr, settings) {
+        beforeSend: function (xhr, settings) {
             if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
                 // Send the token to same-origin, relative URLs only.
                 // Send the token only if the method warrants CSRF protection

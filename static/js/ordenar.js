@@ -1,5 +1,5 @@
 $(function() {
-    init("Debes arrastrar las tarjetas hasta que queden ordenadas de menor a mayor");
+    init("Debes arrastrar las tarjetas hasta que queden ordenadas de menor a mayor", "6C9LOJ8m-gQ");
 
     $("#sortable").sortable({
         revert: true,
