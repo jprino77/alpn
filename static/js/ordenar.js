@@ -6,9 +6,8 @@ $(function() {
         update: isSorted
     });
     var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    numbers.sort(function() {
-        return Math.random() - .5
-    });
+    
+    numbers = shuffle(numbers);
 
     for (var i = 0; i < 10; i++) {
         $('<div>' + numbers[i] + '</div>').attr('id', numbers[i]).addClass('ui-state-default').appendTo('#sortable');

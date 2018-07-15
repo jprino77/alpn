@@ -8,3 +8,15 @@ iframe{
     width: 40%;
     z-index: 999999;
 }
+
+html, body, .page-content{ 
+    height: 100%;
+}
+
+header{
+    height: 10%;
+}
+
+main{
+    height: 90%;
+}

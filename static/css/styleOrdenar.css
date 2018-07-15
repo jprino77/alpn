@@ -1,6 +1,14 @@
+.page-content  {
+    background: url("../images/papel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 #sortable,
 #drag-Serie {
     margin: 15%;
+    margin-left:17%;
     text-align: center;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -23,6 +31,9 @@
     background: #fff;
 }
 
+#sortable div{
+    margin-top: 1%;
+}
 #sortable div:first-child,
 #drag-Serie div:first-child {
     margin-left: 0;

@@ -1,30 +1,49 @@
 $(function() {
     init("Debes arrastrar las tarjetas hasta que completes la serie","Kdd8cW-yuZo");
 
-    for (var i = 1; i <= 10; i++) {
+    var numbers = []
+    var dashNumbers = []
+    var num = 0;
+    for (var i = 0; i < 10; i++){
+        num = Math.floor(Math.random() * 99 + 1);
+        while(numbers.includes(num)){
+            num = Math.floor(Math.random() * 99 + 1);
+        }
+        numbers.push(parseInt(num));
+    }
+    numbers.sort((a, b) => a - b);
 
-        var div = $('<div>' + i + '</div>').attr('id', i).appendTo('#sortable');
+    for (var i = 0; i < numbers.length; i++) {
+
+        var div = $('<div>' + numbers[i] + '</div>').attr('id', numbers[i]).appendTo('#sortable');
         if (i % 2 == 0 || i % 5 == 0) {
-            $("#" + i).css({
-                'border-style': 'dashed',
-                'background': '#FFFFFF'
-            });
-            $('<div>' + i + '</div>').attr('id', 'drag' + i).addClass('serieIncompleta').appendTo('#drag-Serie');
-
-            $("#drag" + i).draggable({
-                containment: '#content',
-                revert: true
-            }).data('position', i);
-
-            var accept = '#drag' + i;
-            $("#" + i).droppable({
-                accept: accept,
-                hoverClass: 'hovered',
-                drop: handleDrop
-            }).data('position', i);
+            dashNumbers.push(numbers[i])
             div.html("");
         }
 
+    }
+
+    dashNumbers = shuffle(dashNumbers);
+
+    for(var i = 0; i < dashNumbers.length; i++){
+        $("#" + dashNumbers[i]).css({
+            'border-style': 'dashed',
+            'background': '#FFFFFF'
+        });
+        $('<div>' + dashNumbers[i] + '</div>').attr('id', 'drag' + dashNumbers[i]).addClass('serieIncompleta').appendTo('#drag-Serie');
+
+        $("#drag" + dashNumbers[i]).draggable({
+            containment: '#content',
+            revert: true
+        }).data('position', dashNumbers[i]);
+
+        var accept = '#drag' + dashNumbers[i];
+        $("#" + dashNumbers[i]).droppable({
+            accept: accept,
+            hoverClass: 'hovered',
+            drop: handleDrop
+        }).data('position', dashNumbers[i]);
+        
     }
 
 

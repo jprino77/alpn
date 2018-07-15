@@ -1,9 +1,14 @@
-body  {
+.page-content  {
     background: url("../images/board.jpg");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: contain;
     background-attachment: fixed;
     background-position: center;
+   
+}
+
+.font{
+    font-family: tiza;
 }
 
 .mdl-cell {
@@ -17,3 +22,8 @@ body  {
 .mdl-grid:first-of-type .mdl-cell {
     height: 50px;
 }
+
+@font-face {
+    font-family: 'tiza';
+    src: url('../fonts/tiza.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  }  

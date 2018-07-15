@@ -1,9 +1,19 @@
-{% extends "base/base.html" %} {% block css %}
+{% extends "base/base.html" %} 
 
-<link rel="stylesheet" href="{{ STATIC_URL }}css/StyleOrdenar.css"> {% endblock %} {%block title_body%} Ordenar {% endblock %} {% block content %}
+{% block css %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/StyleOrdenar.css"> 
+{% endblock %} 
+
+{%block title_body%} Ordenar {% endblock %} 
+
+{% block content %}
 <div id="sortable" class="ui-state-default">
 
 </div>
-{% endblock %} {% block js %}
+{% endblock %}
 
-<script src="{{ STATIC_URL }}js/ordenar.js"></script> {% endblock %}
+{% block js %}
+
+<script src="{{ STATIC_URL }}js/ordenar.js"></script> 
+
+{% endblock %}

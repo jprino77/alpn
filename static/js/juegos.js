@@ -3,6 +3,23 @@ var movimientos = 0;
 var horaI = 0;
 var horaf = 0;
 
+function shuffle(list) {
+    var ctr = list.length, temp, index;
+
+// While there are elements in the array
+    while (ctr > 0) {
+// Pick a random index
+        index = Math.floor(Math.random() * ctr);
+// Decrease ctr by 1
+        ctr--;
+// And swap the last element with it
+        temp = list[ctr];
+        list[ctr] = list[index];
+        list[index] = temp;
+    }
+    return list;
+}
+
 function reproducirSonido(sonido) {
     $("#" + sonido).get(0).play()
 }
