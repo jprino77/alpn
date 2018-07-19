@@ -16,12 +16,18 @@
 </head>
 
 <body>
+    {%block audio%}
     <audio id="aplausos">
         <source src="{{STATIC_URL}}audio/aplausos.mp3" type="audio/mpeg">
     </audio>
     <audio id="coin">
         <source src="{{STATIC_URL}}audio/coin.mp3" type="audio/mpeg">
     </audio>
+
+    <audio id="tuberia">
+            <source src="{{STATIC_URL}}audio/tuberia.mp3" type="audio/mpeg">
+        </audio>
+    {% endblock %}
     <!-- Always shows a header, even in smaller screens. -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">

@@ -133,6 +133,8 @@ function handleDrop(event, ui) {
         });
         ui.draggable.draggable('option', 'revert', false);
 
+        reproducirSonido("tuberia");
+
         ui.draggable.hide(500, function () {
             countDisplayElements();
         });

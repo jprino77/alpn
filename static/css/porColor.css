@@ -9,13 +9,9 @@
  }
  
  #draggeable {
-     width: 90%;
-     height: 46%;
-     position: absolute;
-     margin-top: 23%;
-     margin-left: 5%;
+     margin-top: 5%;
+     padding: 1% 0% 2% 4%;
      border: 2px solid black;
      border-radius: 10px;
      background: url("../images/wood.jpg");
-     background-size: cover;
  }
