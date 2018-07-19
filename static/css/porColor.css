@@ -1,3 +1,10 @@
+.page-content  {
+    background: url("../images/ladrillo2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
  .triangle4 {
      float: left;
      margin-left: 13%;
