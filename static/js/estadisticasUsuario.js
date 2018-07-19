@@ -5,12 +5,18 @@ $(function () {
         packages: ["corechart"]
     });
 
-    obtenerDatosChart()
-
+    $('#buscar').click(function(){
+        obtenerDatosChart($('#tipoJuego').val(), $('#alumno').val())
+    });
 });
 
-function obtenerDatosChart() {
-    $.getJSON("movErrPartida", function (data) {
+function obtenerDatosChart(tipoJuego, alumno) {
+
+    filtro = {
+        tipoJuego : tipoJuego,
+        alumno : alumno
+    }
+    $.getJSON("movErrPartida",filtro, function (data) {
         google.charts.setOnLoadCallback(drawMovimientoChart(data.movimientos));
         google.charts.setOnLoadCallback(drawErrorChart(data.errores));
     });

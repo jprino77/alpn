@@ -2,14 +2,20 @@ $(function(){
     google.charts.load("current", {
         packages: ['corechart']
     });
-    obtenerDatosChart()
+
+    $('#buscar').click(function(){
+        obtenerDatosChart($('#tipoJuego').val())
+    });
 
     
 });
 
-function obtenerDatosChart(){
-
-    $.getJSON("movErrEdad", function(data) {
+function obtenerDatosChart(tipoJuego){
+    filtro={
+        tipoJuego : tipoJuego
+    }
+    
+    $.getJSON("movErrEdad",filtro, function(data) {
         google.charts.setOnLoadCallback(drawMovChart(data.movimientos));
         google.charts.setOnLoadCallback(drawErrChart(data.errores));
     });

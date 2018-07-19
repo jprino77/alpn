@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.http      import HttpResponse,JsonResponse
 from apps.usuario.decorators import tutor_required
-from .querys import estadistica_edad, estadistica_alumnos
+from .querys import estadistica_edad, estadistica_alumnos, datos_filtro
 
 import json
 
@@ -12,15 +12,20 @@ def index(request):
 
 @tutor_required
 def estadistica(request):
-    return render(request, 'estadisticasPorUsuario.html')
+    respuesta = datos_filtro(request.user.usuario.id)
+    return render(request, 'estadisticasPorUsuario.html',{'tipoJuegos':respuesta[0], 'alumnos':respuesta[1]})
 
 @tutor_required
 def estadisticaEdad(request):
-    return render(request, 'estadisticasPorEdad.html')
+    respuesta = datos_filtro(request.user.usuario.id)
+    return render(request, 'estadisticasPorEdad.html',{'tipoJuegos':respuesta[0]})
 
 @tutor_required
 def mov_eror_partida (request):
-    resultado = estadistica_alumnos()
+    tipo_juego_id = request.GET.get('tipoJuego')
+    alumno = request.GET.get('alumno')
+
+    resultado = estadistica_alumnos(tipo_juego_id,alumno)
     errores = list();
     movimientos = list();
     index = 0; 
@@ -34,7 +39,8 @@ def mov_eror_partida (request):
 
 @tutor_required
 def mov_err_edad (request):
-    resultado= estadistica_edad();
+    tipo_juego_id = request.GET.get('tipoJuego')
+    resultado= estadistica_edad(tipo_juego_id);
     errores = list();
     movimientos = list();
     
