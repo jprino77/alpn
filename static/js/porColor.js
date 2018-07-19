@@ -1,6 +1,29 @@
 $(function () {
+    var colors = ["bottom-red","bottom-blue","bottom-yellow","bottom-green","bottom-pink","bottom-violet"];
+    var colorsDrag=[];
+    colors = shuffle(colors);
 
-    init("Debes Solar los triangulos en el color que corresponda","ka2QBKEeU4Q");
+    for(var i = 0; i < 3; i++){
+        $('<div></div>').addClass('triangle4').addClass(colors[i]).appendTo('#droppeable');
+        //4 por color
+        colorsDrag.push(colors[i]);
+        colorsDrag.push(colors[i]);
+        colorsDrag.push(colors[i]);
+        colorsDrag.push(colors[i]);
+    }
+
+    colorsDrag = shuffle(colorsDrag);
+
+    for(var i = 0; i < colorsDrag.length; i++){
+        $('<div></div>').addClass('count').addClass('triangle3').addClass(colorsDrag[i]).appendTo('#draggeable');
+    }
+
+
+});
+
+$(function () {
+
+    init("Debes Solar los triangulos en el color que corresponda", "ka2QBKEeU4Q");
 
     $("#draggeable  .bottom-red").draggable({
         containment: '#content',
@@ -16,6 +39,23 @@ $(function () {
         containment: '#content',
         revert: true
     }).data('figure', 'yellowTriangle');
+
+
+    $("#draggeable  .bottom-pink").draggable({
+        containment: '#content',
+        revert: true
+    }).data('figure', 'pinkTriangle');
+
+
+    $("#draggeable .bottom-green").draggable({
+        containment: '#content',
+        revert: true
+    }).data('figure', 'greenTriangle');
+
+    $("#draggeable .bottom-violet").draggable({
+        containment: '#content',
+        revert: true
+    }).data('figure', 'violetTriangle');
 
 
     $("#droppeable .bottom-red").droppable({
@@ -37,7 +77,27 @@ $(function () {
     }).data('figure', 'yellowTriangle');
 
 
+    $("#droppeable .bottom-green").droppable({
+        accept: '.bottom-green',
+        hoverClass: 'hovered',
+        drop: handleDrop
+    }).data('figure', 'greenTriangle');
+
+    $("#droppeable .bottom-pink").droppable({
+        accept: '.bottom-pink',
+        hoverClass: 'hovered',
+        drop: handleDrop
+    }).data('figure', 'pinkTriangle');
+
+    $("#droppeable .bottom-violet").droppable({
+        accept: '.bottom-violet',
+        hoverClass: 'hovered',
+        drop: handleDrop
+    }).data('figure', 'violetTriangle');
+
+
 });
+
 
 function countDisplayElements() {
 
@@ -65,7 +125,7 @@ function handleDrop(event, ui) {
     if (drop == drag) {
         ui.draggable.addClass('correct');
         ui.draggable.draggable('disable');
-        $(this).droppable('disable');
+       
         ui.draggable.position({
             of: $(this),
             my: 'center',
