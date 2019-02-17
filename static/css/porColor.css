@@ -1,0 +1,24 @@
+.page-content  {
+    background: url("../images/ladrillo2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+ .triangle4 {
+     float: left;
+     margin-left: 13%;
+     margin-top: 2%;
+ }
+ 
+ .triangle3 {
+     float: left;
+ }
+ 
+ #draggeable {
+     margin-top: 5%;
+     padding: 1% 0% 2% 4%;
+     border: 2px solid black;
+     border-radius: 10px;
+     background: url("../images/wood.jpg");
+ }

@@ -1,0 +1,20 @@
+{% extends "base/base.html" %} {% block css %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/porColor.css"> {% endblock %} 
+
+{%block title_body%} AGRUPAR POR COLOR {% endblock %} 
+
+{% block content %}
+<div class="mdl-grid center-items">
+    <div id="droppeable" class="mdl-cell mdl-cell--12-col mdl-cell--middle">
+    </div>
+</div>
+
+<div class="mdl-grid center-items">
+    <div id="draggeable" class="mdl-cell mdl-cell--12-col mdl-cell--middle">
+    </div>
+</div>
+{% endblock %} 
+
+{% block js %}
+<script src="{{ STATIC_URL }}js/porColor.js"></script> 
+{% endblock %}

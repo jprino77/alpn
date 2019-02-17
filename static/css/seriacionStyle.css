@@ -1,0 +1,14 @@
+ #sortable>div,
+ #drag-Serie>div {
+     float: left;
+     margin-top: 5%;
+ }
+
+ .serieIncompleta:not(.ui-draggable-disabled){
+     margin-top: 3% !important;
+ }
+
+ #sortable{
+
+    margin-top: 10% !important;
+ }

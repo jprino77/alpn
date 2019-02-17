@@ -1,0 +1,7 @@
+INSERT INTO `alpn`.`tipo_juego` (`codigo`, `descripcion`) VALUES ('ORD', 'Ordenar');
+INSERT INTO `alpn`.`tipo_juego` (`codigo`, `descripcion`) VALUES ('COL', 'Agrupar por color');
+INSERT INTO `alpn`.`tipo_juego` (`codigo`, `descripcion`) VALUES ('TRA', 'Rompecabezas');
+INSERT INTO `alpn`.`tipo_juego` (`codigo`, `descripcion`) VALUES ('SER', 'Seriacion');
+
+INSERT INTO `alpn`.`tipo_usuario` (`codigo`, `descripcion`) VALUES ('ALU', 'Alumno');
+INSERT INTO `alpn`.`tipo_usuario` (`codigo`, `descripcion`) VALUES ('TUT', 'Tutor');

@@ -1,0 +1,47 @@
+{% extends "base/estadisticaBase.html" %}
+{% block css %}{% endblock %}
+{%block title_body%} Estadisticas {% endblock %}
+{% block content %}
+<div class="mdl-grid center-items">
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--middle  mdl-typography--text-center">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select id="tipoJuego" name="tipoJuego" class="mdl-textfield__input">
+                {% for tipoJuego in tipoJuegos%}
+                <option value="{{tipoJuego.id}}">{{tipoJuego.descripcion}}</option>
+                {% endfor %}
+            </select>
+            <label class="mdl-textfield__label" for="tipoJuego">Juego</label>
+        </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--middle  mdl-typography--text-center">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select id="alumno" name="alumno" class="mdl-textfield__input">
+                {% for alumno in alumnos%}
+                <option value="{{alumno.user.id}}">{{alumno.user.username}}</option>
+                {% endfor %}
+            </select>
+            <label class="mdl-textfield__label" for="alumno">Alumno</label>
+        </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--middle  mdl-typography--text-center">
+        <button id="buscar" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Buscar</button>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--middle">
+        <hr>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--middle">
+
+        <div id="chart_movimiento_div"></div>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--middle">
+
+        <div id="chart_error_div"></div>
+    </div>
+</div>
+{% endblock %} {% block js %}
+
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="{{ STATIC_URL }}js/estadisticasUsuario.js"></script> {% endblock %}

@@ -1,0 +1,54 @@
+.page-content  {
+    background: url("../images/papel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#sortable,
+#drag-Serie {
+    margin: 15%;
+    margin-left:17%;
+    text-align: center;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#sortable div,
+#drag-Serie div {
+    float: left;
+    width: 58px;
+    height: 78px;
+    padding: 10px;
+    padding-top: 40px;
+    padding-bottom: 0;
+    border: 2px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 0 0 0 10px;
+    background: #fff;
+}
+
+#sortable div{
+    margin-top: 1%;
+}
+#sortable div:first-child,
+#drag-Serie div:first-child {
+    margin-left: 0;
+}
+
+#sortable div,
+#drag-Serie div {
+    background: #666;
+    color: #fff;
+    font-size: 50px;
+    text-shadow: 0 0 3px #000;
+}
+
+#sortable div.ui-sortable-helper {
+    -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}

@@ -1,0 +1,112 @@
+ #triangle-up {
+     width: 0;
+     height: 0;
+     border-left: 50px solid transparent;
+     border-right: 50px solid transparent;
+     border-bottom: 100px solid red;
+     z-index: 1;
+ }
+
+ #triangle-down {
+     border-top: none;
+     border-left: none;
+     border-right: 100px dashed transparent;
+     border-bottom: 100px solid black;
+     display: block;
+     overflow: hidden;
+     width: 0;
+     height: 0;
+ }
+
+ .triangle3 {
+     width: 0;
+     height: 0;
+     position: relative;
+     border-bottom: solid 100px #424242;
+     border-left: solid 60px transparent;
+     border-right: solid 60px transparent;
+ }
+
+ .star5 {
+     background: beige;
+     width: 80px;
+     height: 80px;
+     margin: 10px;
+     position: relative;
+     border-radius: 20px;
+ }
+
+ .star5:before {
+     content: "";
+     background: beige;
+     width: 80px;
+     height: 80px;
+     position: absolute;
+     border-radius: 20px;
+     transform: rotate(45deg);
+ }
+
+ .parallelogram {
+     background: #424242;
+     width: 120px;
+     height: 100px;
+     position: relative;
+     margin-left: -10px;
+     transform: skew(-31deg);
+ }
+
+ .square {
+     background: #424242;
+     width: 122px;
+     height: 100px;
+     position: relative;
+ }
+
+ .triangle4 {
+     width: 0;
+     height: 0;
+     position: relative;
+     border-bottom: solid 150px;
+     border-left: solid 100px transparent;
+     border-right: solid 100px transparent;
+ }
+
+ .triangle4:before {
+     content: "";
+     width: 0;
+     height: 0;
+     position: absolute;
+     top: 15px;
+     left: -79px;
+     border-bottom: solid 123px #000;
+     border-left: solid 80px transparent;
+     border-right: solid 80px transparent;
+ }
+
+ .bottom-red {
+     border-bottom-color: #E53935;
+ }
+
+ .bottom-blue {
+     border-bottom-color: #1565C0;
+ }
+
+ .bottom-green {
+     border-bottom-color: green;
+ }
+
+ .bottom-pink {
+     border-bottom-color: pink;
+ }
+
+ .bottom-violet {
+     border-bottom-color: violet;
+ }
+
+ .bottom-yellow {
+     border-bottom-color: #FFEB3B;
+ }
+
+ #draggeable>div {
+     display: inherit;
+ }
